@@ -1,0 +1,450 @@
+/* -------------------------------
+   GLOBAL
+---------------------------------- */
+:root {
+  --primary: #6c7cff;
+  --secondary: #4fd1c5;
+  --dark: #222;
+  --light: #fff;
+  --gray: #666;
+  --bg: #f8f9fc;
+  --radius: 10px;
+  --shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* -------------------------------
+   HEADER
+---------------------------------- */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--light);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  cursor: pointer;
+}
+
+.brand .logo {
+  width: 40px;
+  height: 40px;
+}
+
+.brand h1 {
+  font-size: 1.4rem;
+  color: var(--primary);
+}
+
+.brand .tag {
+  font-size: 0.75rem;
+  color: var(--gray);
+  margin-top: -4px;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  cursor: pointer;
+  color: var(--dark);
+  transition: color .3s;
+}
+
+.nav-btn:hover {
+  color: var(--primary);
+}
+
+.cta {
+  background: var(--primary);
+  color: var(--light);
+  border: none;
+  padding: .6rem 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 600;
+  transition: background .3s;
+}
+
+.cta:hover {
+  background: var(--secondary);
+}
+
+.burger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+}
+
+/* -------------------------------
+   HERO SECTION
+---------------------------------- */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 2rem;
+  gap: 2rem;
+  animation: fadeInUp 1s ease;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.hero-visual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.card-visual {
+  width: 80%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.illustration {
+  width: 100%;
+  height: auto;
+}
+
+/* -------------------------------
+   BUTTONS
+---------------------------------- */
+button.primary {
+  background: var(--primary);
+  color: var(--light);
+  padding: .6rem 1.2rem;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background .3s;
+}
+
+button.primary:hover {
+  background: var(--secondary);
+}
+
+button.ghost {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  padding: .5rem 1.2rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all .3s;
+}
+
+button.ghost:hover {
+  background: var(--primary);
+  color: var(--light);
+}
+
+button.link {
+  background: none;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+  font-size: .9rem;
+  text-decoration: underline;
+}
+
+/* -------------------------------
+   FEATURES
+---------------------------------- */
+.features {
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem;
+  background: var(--light);
+}
+
+.feature {
+  flex: 1;
+  margin: 0 .6rem;
+  padding: 1rem;
+  background: var(--bg);
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: transform .3s;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+}
+
+/* -------------------------------
+   CONTAINERS
+---------------------------------- */
+.container {
+  padding: 3rem 2rem;
+}
+
+.container.narrow {
+  max-width: 700px;
+  margin: auto;
+}
+
+/* -------------------------------
+   ABOUT
+---------------------------------- */
+.cards {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.info-card {
+  flex: 1;
+  background: var(--light);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform .3s;
+}
+
+.info-card:hover {
+  transform: scale(1.03);
+}
+
+/* -------------------------------
+   SERVICES
+---------------------------------- */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.service {
+  background: var(--light);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform .3s;
+}
+
+.service:hover {
+  transform: translateY(-6px);
+}
+
+.service-detail {
+  margin-top: 2rem;
+  background: var(--bg);
+  padding: 1rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.hide {
+  display: none !important;
+}
+
+/* -------------------------------
+   TEAM
+---------------------------------- */
+.team-grid {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.member {
+  flex: 1;
+  text-align: center;
+  background: var(--light);
+  padding: 1rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.member img {
+  width: 80px;
+  margin-bottom: .8rem;
+}
+
+/* -------------------------------
+   CONTACT FORM
+---------------------------------- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.contact-form .row {
+  display: flex;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: .8rem;
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  width: 100%;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.contact-info {
+  margin-top: 2rem;
+  font-size: .9rem;
+  color: var(--gray);
+}
+
+/* -------------------------------
+   FOOTER
+---------------------------------- */
+.site-footer {
+  background: var(--dark);
+  color: var(--light);
+  text-align: center;
+  padding: 1rem;
+}
+
+.site-footer .social a {
+  margin: 0 .5rem;
+  color: var(--light);
+  text-decoration: none;
+}
+
+/* -------------------------------
+   MODAL
+---------------------------------- */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-panel {
+  background: var(--light);
+  padding: 2rem;
+  border-radius: var(--radius);
+  width: 90%;
+  max-width: 500px;
+  box-shadow: var(--shadow);
+  position: relative;
+  animation: fadeInUp .4s ease;
+}
+
+.modal .close {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  position: absolute;
+  top: .6rem;
+  right: .6rem;
+  cursor: pointer;
+}
+
+/* -------------------------------
+   PAGE ANIMATIONS
+---------------------------------- */
+.page {
+  display: none;
+  animation: fadeInUp .6s ease;
+}
+
+.page.active {
+  display: block;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* -------------------------------
+   RESPONSIVE
+---------------------------------- */
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+    flex-direction: column;
+    background: var(--light);
+    position: absolute;
+    right: 0;
+    top: 60px;
+    box-shadow: var(--shadow);
+    padding: 1rem;
+  }
+  .nav.show {
+    display: flex;
+  }
+  .burger {
+    display: block;
+  }
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .features {
+    flex-direction: column;
+  }
+  .cards {
+    flex-direction: column;
+  }
+  .team-grid {
+    flex-direction: column;
+  }
+  .contact-form .row {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MCORP Corporate Services</title>
+  <link rel="icon" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand" onclick="navigateTo('home')">
+      <img src="assets/logo.svg" alt="MCORP logo" class="logo" />
+      <div>
+        <h1>MCORP</h1>
+        <p class="tag">Corporate Services</p>
+      </div>
+    </div>
+    <nav class="nav">
+      <button class="nav-btn" data-target="home">Home</button>
+      <button class="nav-btn" data-target="about">About</button>
+      <button class="nav-btn" data-target="services">Services</button>
+      <button class="nav-btn" data-target="team">Team</button>
+      <button class="nav-btn" data-target="contact">Contact</button>
+    </nav>
+    <button class="cta" onclick="openContactModal()">Get a Quote</button>
+    <button class="burger" aria-label="Open menu" onclick="toggleMobileNav()">☰</button>
+  </header>
+
+  <main id="app">
+    <!-- HOME PAGE -->
+    <section id="home" class="page active" aria-labelledby="homeTitle">
+      <div class="hero">
+        <div class="hero-content">
+          <h2 id="homeTitle">We make corporate simple.</h2>
+          <p>MCORP helps businesses with company incorporation, compliance, accounting, and advisory services — with clarity and care.</p>
+          <div class="hero-actions">
+            <button class="primary" onclick="navigateTo('services')">Explore Services</button>
+            <button class="ghost" onclick="openContactModal()">Talk to us</button>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="card-visual">
+            <svg viewBox="0 0 200 120" class="illustration" aria-hidden="true">
+              <rect x="5" y="5" width="190" height="110" rx="12" fill="url(#g)"/>
+              <defs>
+                <linearGradient id="g" x1="0" x2="1">
+                  <stop offset="0" stop-color="#6c7cff"/>
+                  <stop offset="1" stop-color="#4fd1c5"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="features">
+        <article class="feature">
+          <h3>Fast Incorporation</h3>
+          <p>Register your company quickly with our streamlined process.</p>
+        </article>
+        <article class="feature">
+          <h3>Reliable Compliance</h3>
+          <p>Stay compliant with local laws — we handle the paperwork.</p>
+        </article>
+        <article class="feature">
+          <h3>Trusted Advice</h3>
+          <p>Financial and corporate advisory from experienced professionals.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="page" aria-labelledby="aboutTitle">
+      <div class="container">
+        <h2 id="aboutTitle">About MCORP</h2>
+        <p>Founded to simplify corporate operations, MCORP combines tech-friendly processes with human-centred service. We serve startups, SMEs, and enterprises.</p>
+        <div class="cards">
+          <div class="info-card">
+            <h4>Our Mission</h4>
+            <p>To make business administration simple, transparent and accessible.</p>
+          </div>
+          <div class="info-card">
+            <h4>Our Values</h4>
+            <p>Integrity, clarity, and proactive support.</p>
+          </div>
+          <div class="info-card">
+            <h4>Why choose us</h4>
+            <p>Competitive pricing, personalised support, and a fast turnaround.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="page" aria-labelledby="servicesTitle">
+      <div class="container">
+        <h2 id="servicesTitle">Services</h2>
+        <p>Tailored corporate services designed to fit your stage and needs.</p>
+        <div class="service-grid">
+          <div class="service">
+            <h4>Company Incorporation</h4>
+            <p>From name check to registration and post-registration setup.</p>
+            <button class="link" onclick="showServiceDetail('incorporation')">Learn more</button>
+          </div>
+          <div class="service">
+            <h4>Accounting & Payroll</h4>
+            <p>Accurate bookkeeping and seamless payroll management.</p>
+            <button class="link" onclick="showServiceDetail('accounting')">Learn more</button>
+          </div>
+          <div class="service">
+            <h4>Compliance & Filings</h4>
+            <p>Statutory filings, licenses, and regulatory compliance.</p>
+            <button class="link" onclick="showServiceDetail('compliance')">Learn more</button>
+          </div>
+          <div class="service">
+            <h4>Advisory</h4>
+            <p>Business strategy, tax planning, and corporate restructuring.</p>
+            <button class="link" onclick="showServiceDetail('advisory')">Learn more</button>
+          </div>
+        </div>
+        <div id="serviceDetail" class="service-detail hide" role="dialog" aria-modal="true"></div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section id="team" class="page" aria-labelledby="teamTitle">
+      <div class="container">
+        <h2 id="teamTitle">Our Team</h2>
+        <p>People who care about your business.</p>
+        <div class="team-grid">
+          <div class="member">
+            <img src="assets/person1.svg" alt="Jane - Head of Operations" />
+            <h5>Jane Lim</h5>
+            <p>Head of Operations</p>
+          </div>
+          <div class="member">
+            <img src="assets/person2.svg" alt="Ravi - Senior Advisor" />
+            <h5>Ravi Kumar</h5>
+            <p>Senior Advisor</p>
+          </div>
+          <div class="member">
+            <img src="assets/person3.svg" alt="Aisha - Client Success" />
+            <h5>Aisha Rahman</h5>
+            <p>Client Success</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="page" aria-labelledby="contactTitle">
+      <div class="container narrow">
+        <h2 id="contactTitle">Contact Us</h2>
+        <p>Ready to start? Send us a message and we'll get back within 1 business day.</p>
+        <form id="contactForm" class="contact-form" onsubmit="submitContact(event)">
+          <div class="row">
+            <input type="text" name="name" placeholder="Full name" required />
+            <input type="email" name="email" placeholder="Email address" required />
+          </div>
+          <input type="text" name="company" placeholder="Company (optional)" />
+          <textarea name="message" placeholder="How can we help?" rows="6" required></textarea>
+          <div class="form-actions">
+            <button type="submit" class="primary">Send message</button>
+            <button type="button" class="ghost" onclick="resetForm()">Reset</button>
+          </div>
+        </form>
+        <div class="contact-info">
+          <p><strong>Email:</strong> hello@mcorp.company</p>
+          <p><strong>Phone:</strong> +60 12-345 6789</p>
+          <p><strong>Address:</strong> Level 12, Business Tower, Kuala Lumpur</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© MCORP Corporate Services — <span id="year"></span> — Built with care.</p>
+    <div class="social">
+      <a href="#" aria-label="LinkedIn">in</a>
+      <a href="#" aria-label="Twitter">tw</a>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div id="modal" class="modal hide" role="dialog" aria-hidden="true">
+    <div class="modal-panel">
+      <button class="close" onclick="closeModal()" aria-label="Close">✕</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
